@@ -1,0 +1,34 @@
+<h3 mat-card-title>Usuario</h3>
+<div mat-card-content>
+  <form class="usuario-Form" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <mat-form-field class="formfield">
+      <mat-label>Nome do Usuario</mat-label>
+      <input matInput type="text" placeholder="Nome" formControlName="name" name="name">
+    </mat-form-field>
+    <mat-form-field class="formfield">
+      <mat-label>Email do Usuario</mat-label>
+      <input matInput type="text" placeholder="Email" formControlName="email" name="email">
+    </mat-form-field>
+    <mat-form-field class="formfield">
+      <mat-label>Contato do Usuario</mat-label>
+      <input matInput type="text" placeholder="Contato" formControlName="contato" name="contato">
+    </mat-form-field>
+    <mat-form-field class="formfield">
+      <mat-label>Data de Cadastro</mat-label>
+      <input matInput placeholder="Data" formControlName="data" name="data">
+    </mat-form-field>
+    <mat-form-field class="formfield">
+      <mat-label>Foto do Usuario</mat-label>
+      <input matInput placeholder="Foto" formControlName="foto" name="foto">
+    </mat-form-field>
+  </form>
+</div>
+<div mat-card>
+    <button mat-raised-button [disabled]="!formulario.valid" (click)="createUsuario()" color="primary">
+      Salvar Usuario
+    </button>
+
+    <button mat-raised-button (click)="cancel()">
+      Cancelar
+    </button>
+</div>
